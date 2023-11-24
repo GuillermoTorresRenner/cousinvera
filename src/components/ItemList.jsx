@@ -1,6 +1,6 @@
-import ProductCard from "../ProductCard/ProductCard";
+import ProductCard from "./ProductCard";
 
-const Catalog = ({ products }) => {
+const ItemList = ({ products }) => {
   return (
     <div className="grid grid-col-1 md:grid-cols-3 lg:grid-cols-4 lg:grid-rows-3 gap-5 mx-10">
       {products.map((p) => (
@@ -18,4 +18,4 @@ const Catalog = ({ products }) => {
   );
 };
 
-export default Catalog;
+export default ItemList;

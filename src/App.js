@@ -1,29 +1,33 @@
-import Navbar from "./components/Navbar/Navbar";
+import Navbar from "./components/Navbar";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import ItemListContainer from "./pages/ItemListContainer";
+import ItemDetailContainer from "./pages/ItemDetailContainer";
+import Cart from "./pages/Cart";
+import CartProvider from "./context/CartProvider";
 
-import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
-import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
 function App() {
   return (
     <div>
       <BrowserRouter>
-        <Navbar />
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <ItemListContainer greeting="¡Bienvenido a CousinVera! Tu vivero urbano Online" />
-            }
-          />
-          <Route
-            path="/category/:id"
-            element={
-              <ItemListContainer greeting="¡Bienvenido a CousinVera! Tu vivero urbano Online" />
-            }
-          />
-          <Route path="/item/:id" element={<ItemDetailContainer />} />
-          <Route path="" element={null} />
-        </Routes>
+        <CartProvider>
+          <Navbar />
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <ItemListContainer greeting="¡Bienvenido a CousinVera! Tu vivero urbano Online" />
+              }
+            />
+            <Route
+              path="/category/:id"
+              element={
+                <ItemListContainer greeting="¡Bienvenido a CousinVera! Tu vivero urbano Online" />
+              }
+            />
+            <Route path="/item/:id" element={<ItemDetailContainer />} />
+            <Route path="/cart" element={<Cart />} />
+          </Routes>
+        </CartProvider>
       </BrowserRouter>
     </div>
   );

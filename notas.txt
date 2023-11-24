@@ -1,0 +1,12 @@
+Una vez sembrada la base de datos con data de la app y agregado el campo stock quedaría proceder así:
+
+1) Agregar el texto cantidad disponible en el item Coount y hacer operaciones de descuento al confirmar la compra
+
+2) Reemplazar los llamaos a la API fake por los llamados a la basde de datos.
+   Ya que se cargarán en un state todos los datos de la db, me parecería buena idea guardar estos
+   datos en un nuevo context, y a través de este pasarlo a los componentes que lo necesites, 
+   incluyendo una funcion para filtrar el elemento seleccionado y pasarlo a componente DetailItem
+   De este modo no es necesario hacer una nueva llamada a la base de datos.
+
+   Así mismo se pueden filtrar las categorías de los productos con funciones de Array y no 
+   es necesario volver a llamar a la db para pedir datos en una nueva consulta.

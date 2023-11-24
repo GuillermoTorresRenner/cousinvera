@@ -1,9 +1,12 @@
 import { NavLink } from "react-router-dom";
-import CardWidget from "../CardWidget/CardWidget.js";
-import { useState } from "react";
+import CardWidget from "./CardWidget";
+import { useState, useContext } from "react";
 import { AiOutlineMenu } from "react-icons/ai";
+import { CartContext } from "../context/CartProvider";
+
 const Navbar = () => {
   const [hidden, setHidden] = useState(false);
+  const { cart } = useContext(CartContext);
   return (
     <div>
       <div className="bg-teal-500 pt-5 flex justify-between">
@@ -14,7 +17,7 @@ const Navbar = () => {
           </NavLink>
         </div>
 
-        <CardWidget cart={10} />
+        <CardWidget cart={cart.length} />
       </div>
       <nav className="flex items-center justify-between flex-wrap bg-teal-500 p-6">
         {/* Menu */}
@@ -69,7 +72,7 @@ const Navbar = () => {
                 }`
               }
             >
-              Semillas
+              Plantas Suculentas
             </NavLink>
             <NavLink
               to={"/category/men's clothing"}
@@ -80,8 +83,9 @@ const Navbar = () => {
                 }`
               }
             >
-              Macetas
+              Semillas
             </NavLink>
+
             <NavLink
               to={"/category/electronics"}
               className={({ isActive }) =>
@@ -91,34 +95,11 @@ const Navbar = () => {
                 }`
               }
             >
-              Abonos
-            </NavLink>
-            <NavLink
-              to={"/category/jewelery"}
-              className={({ isActive }) =>
-                `block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white text-xl mr-4 ${
-                  isActive &&
-                  " bg-green-400  text-white font-bold rounded-xl py-1 px-2"
-                }`
-              }
-            >
-              Herramientas
-            </NavLink>
-            <NavLink
-              to={"/category/electronics"}
-              className={({ isActive }) =>
-                `block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white text-xl mr-4 ${
-                  isActive &&
-                  " bg-green-400  text-white font-bold rounded-xl py-1 px-2"
-                }`
-              }
-            >
-              <span>Libros</span>
+              Libros
             </NavLink>
           </div>
         </div>
       </nav>
-      {/* Carro */}
     </div>
   );
 };

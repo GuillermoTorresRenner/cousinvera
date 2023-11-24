@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react";
-import Catalog from "../Catalog/Catalog";
+import ItemList from "../components/ItemList";
 import { useParams } from "react-router-dom";
 
 function ItemListContainer({ greeting }) {
-  const params = useParams(); // Quita "id" como argumento, ya que useParams no acepta argumentos
-
+  const params = useParams();
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
@@ -30,10 +29,11 @@ function ItemListContainer({ greeting }) {
 
   return (
     <div>
+      <button>Load Data</button>
       <h1 className="text-center text-4xl font-bold my-10 text-neutral-500">
         {greeting}
       </h1>
-      <Catalog products={products} />
+      <ItemList products={products} />
     </div>
   );
 }

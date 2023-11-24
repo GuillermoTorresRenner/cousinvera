@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import AddCartButton from "../AddCartButton/AddCartButton";
+
 const ProductCard = ({ titulo, precio, img, id }) => {
   return (
     <Link to={`item/${id}`}>
@@ -9,7 +9,6 @@ const ProductCard = ({ titulo, precio, img, id }) => {
           {titulo}
         </h2>
         <span className="text-3xl font-bold">{`$ ${precio}`}</span>
-        <AddCartButton />
       </div>
     </Link>
   );
