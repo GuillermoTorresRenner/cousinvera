@@ -29,9 +29,12 @@ const ItemCount = ({ stock }) => {
 
   return (
     <div className=" mt-5">
-      <div className="flex items-center justify-start pl-10 pt-5 bg-gray-50 rounded-xl">
+      <span className="text-xl font-bold my-20 text-green-700">
+        Unidades disponibles: {stock}
+      </span>
+      <div className="flex items-center justify-start pl-10 pt-5  rounded-xl">
         <button
-          className="bg-blue-400 text-white px-2 py-2  rounded"
+          className="bg-blue-600 text-white px-2 py-2  rounded"
           disabled={disableSubstract}
           onClick={() => dispatch({ type: "DECREMENT" })}
         >
@@ -39,17 +42,18 @@ const ItemCount = ({ stock }) => {
         </button>
         <span className="text-xl font-bold mx-5">{state.quantity}</span>
         <button
-          className="bg-blue-400 text-white px-2 py-2  rounded "
+          className="bg-blue-600 text-white px-2 py-2  rounded "
           onClick={() => dispatch({ type: "INCREMENT" })}
           disabled={disableAdd}
         >
           <FaPlus />
         </button>
-        <button className="bg-blue-500  rounded-xl px-3 py-2 text-white mx-6 font-bold my-2">
+
+        <button className="bg-blue-600  rounded-xl px-3 py-2 text-white mx-6 font-bold my-2">
           Agregar al carrito
         </button>
       </div>
-      <div className="bg-gray-50 py-5 px-10 flex justify-end">
+      <div className=" py-5 px-10 flex justify-end">
         <Link
           to="/cart"
           className="bg-green-500 text-white px-2 py-2  font-bold rounded-xl "

@@ -40,7 +40,7 @@ const Navbar = () => {
         >
           <div className="text-sm lg:flex-grow">
             <NavLink
-              to={"/category/electronics"}
+              to={"/category/plantas-interior"}
               className={({ isActive }) =>
                 `block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white text-xl mr-4 ${
                   isActive &&
@@ -52,7 +52,7 @@ const Navbar = () => {
             </NavLink>
 
             <NavLink
-              to={"/category/jewelery"}
+              to={"/category/plantas-exterior"}
               className={({ isActive }) =>
                 `block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white text-xl mr-4 ${
                   isActive &&
@@ -64,7 +64,7 @@ const Navbar = () => {
             </NavLink>
 
             <NavLink
-              to={"/category/women's clothing"}
+              to={"/category/plantas-suculentas"}
               className={({ isActive }) =>
                 `block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white text-xl mr-4 ${
                   isActive &&
@@ -75,7 +75,7 @@ const Navbar = () => {
               Plantas Suculentas
             </NavLink>
             <NavLink
-              to={"/category/men's clothing"}
+              to={"/category/semillas"}
               className={({ isActive }) =>
                 `block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white text-xl mr-4 ${
                   isActive &&
@@ -87,7 +87,7 @@ const Navbar = () => {
             </NavLink>
 
             <NavLink
-              to={"/category/electronics"}
+              to={"/category/libros"}
               className={({ isActive }) =>
                 `block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white text-xl mr-4 ${
                   isActive &&
