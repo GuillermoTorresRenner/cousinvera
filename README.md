@@ -1,70 +1,65 @@
-# Getting Started with Create React App
+# 🌿CousinVera: Tienda Virtual de Plantas 🌸
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+¡Bienvenido a CousinVera, yu vivero urbano online!
 
-## Available Scripts
+[Link al proyecto](https://guillermotorresrenner.github.io/cousinvera/)
 
-In the project directory, you can run:
+## Objetivo del Proyecto
 
-### `npm start`
+El objetivo del desarrollo de esta App es consolidar todo lo aprendido en el curso de React ofrecido por **CoderHouse**
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Descripción del Proyecto
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+CousinVera es una tienda virtual ficticia que ofrece una amplia variedad de plantas, desde opciones de interior, suculentas, hasta especies perfectas para tu jardín.
 
-### `npm test`
+La aplicaición permite elegir entre los distintos productos, agregarlos al carrito y generar una orden de compra con los datos inherentes a la misma, agregando persistencia con una base de datos **firebase** y enviando un correo automático al comprador
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Tecnologías Utilizadas
 
-### `npm run build`
+El proyecto CousinVera se desarrolló utilizando las siguientes tecnologías:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **React:** Para crear una interfaz de usuario dinámica y receptiva.
+- **Tailwind CSS:** Para un diseño elegante y moderno.
+- **EmailJS:** Para la gestión eficiente del correo electrónico, brindando una comunicación fluida con nuestros clientes.
+- **Formik:** Para simplificar y gestionar formularios en la aplicación.
+- **Firebase/firestore:** para dar persistencia al contenido de la apliacación y consumir los recursos desde ahí.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Características Destacadas
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. **Amplia Variedad de Plantas:** Explora nuestro catálogo diverso y encuentra la planta perfecta para tu espacio.
 
-### `npm run eject`
+2. **Suculentas Únicas:** Descubre suculentas raras y exquisitas para agregar un toque único a tu colección.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+3. **Semillas para tu Jardín:** Comienza tu propio jardín desde cero con nuestras selecciones de semillas de alta calidad.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+4. **Libros de Jardinería:** Sumérgete en el conocimiento con nuestra colección de libros de jardinería, escritos por expertos en el campo.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Demo 🍀
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+![Demo](./public/demo.gif)
 
-## Learn More
+## Cómo Contribuir 🌱
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+¡Me encantaría recibir contribuciones para mejorar CousinVera! Si deseas contribuir, sigue estos pasos:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. Haz un fork del repositorio.
+2. Crea una rama para tu contribución: `git checkout -b feature/nueva-funcionalidad`.
+3. Realiza tus cambios y haz commit: `git commit -m "Añade nueva funcionalidad"`.
+4. Sube tus cambios: `git push origin feature/nueva-funcionalidad`.
+5. Abre un Pull Request.
 
-### Code Splitting
+## Autoría 🚀
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Este trabajo práctico fue realizado por Guillermo Torres Renner en Noviembre de 2023
 
-### Analyzing the Bundle Size
+### Contacto 📬
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+**Correo Electrónico:** [torresrennerguillermo@gmail.com](mailto:torresrennerguillermo@gmail.com)
 
-### Making a Progressive Web App
+- **Linkedin:** [https://www.linkedin.com/in/guillermotorres-fullstackdeveloper/](https://www.linkedin.com/in/guillermotorres-fullstackdeveloper/)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Si tienes preguntas, sugerencias o simplemente quieres decir hola, no dudes en ponerte en contacto conmigo
 
-### Advanced Configuration
+-
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+¡Gracias por pasar por acá! 🌿

@@ -1,66 +1,54 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { useEffect, useReducer, useState } from "react";
+import { useContext, useState } from "react";
 import { FaPlus, FaMinus } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { CartContext } from "../context/CartProvider";
+import BtnFinish from "./BtnFinish";
 
-const ItemCount = ({ stock }) => {
-  // Reducer para manejar el estado de quantity
-  const quantityReducer = (state, action) => {
-    switch (action.type) {
-      case "INCREMENT":
-        return { ...state, quantity: state.quantity + 1 };
-      case "DECREMENT":
-        return { ...state, quantity: state.quantity - 1 };
-      default:
-        return state;
-    }
+const ItemCount = ({ product }) => {
+  const { addToCart, cart } = useContext(CartContext);
+  const [quantity, setQuantity] = useState(1);
+  const increment = () => {
+    setQuantity(quantity + 1);
   };
-  const initialState = { quantity: 1 };
-  const [state, dispatch] = useReducer(quantityReducer, initialState);
-  const [disableSubstract, setDisableSubstract] = useState(true);
-  const [disableAdd, setDisableAdd] = useState(false);
-  useEffect(() => {
-    state.quantity <= 1
-      ? setDisableSubstract(true)
-      : setDisableSubstract(false);
-
-    state.quantity >= stock ? setDisableAdd(true) : setDisableAdd(false);
-  }, [state.quantity]);
+  const decrement = () => {
+    setQuantity(quantity - 1);
+  };
+  const addItem = () => {
+    addToCart(product, quantity);
+    setQuantity(1);
+  };
 
   return (
     <div className=" mt-5">
       <span className="text-xl font-bold my-20 text-green-700">
-        Unidades disponibles: {stock}
+        Unidades disponibles: {product.stock}
       </span>
       <div className="flex items-center justify-start pl-10 pt-5  rounded-xl">
         <button
+          onClick={decrement}
           className="bg-blue-600 text-white px-2 py-2  rounded"
-          disabled={disableSubstract}
-          onClick={() => dispatch({ type: "DECREMENT" })}
+          disabled={quantity <= 1}
         >
           <FaMinus />
         </button>
-        <span className="text-xl font-bold mx-5">{state.quantity}</span>
+        <span className="text-xl font-bold mx-5">{quantity}</span>
         <button
+          onClick={increment}
           className="bg-blue-600 text-white px-2 py-2  rounded "
-          onClick={() => dispatch({ type: "INCREMENT" })}
-          disabled={disableAdd}
+          disabled={product.stock - quantity <= 0}
         >
           <FaPlus />
         </button>
 
-        <button className="bg-blue-600  rounded-xl px-3 py-2 text-white mx-6 font-bold my-2">
+        <button
+          onClick={addItem}
+          className="bg-blue-600  rounded-xl px-3 py-2 text-white mx-6 font-bold my-2"
+        >
           Agregar al carrito
         </button>
       </div>
-      <div className=" py-5 px-10 flex justify-end">
-        <Link
-          to="/cart"
-          className="bg-green-500 text-white px-2 py-2  font-bold rounded-xl "
-        >
-          Terminar Compra
-        </Link>
-      </div>
+
+      <BtnFinish disabled={cart.length <= 0} />
     </div>
   );
 };

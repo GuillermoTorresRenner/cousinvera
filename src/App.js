@@ -7,6 +7,8 @@ import CartProvider from "./context/CartProvider";
 // Importación de funcionalidades de firebase
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
+import CheckOut from "./pages/CheckOut";
+import OrderProvider from "./context/OrderProvider";
 
 // const firebaseConfig = {
 //   apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
@@ -39,23 +41,26 @@ function App() {
     <div>
       <BrowserRouter>
         <CartProvider>
-          <Navbar />
-          <Routes>
-            <Route
-              path="/"
-              element={
-                <ItemListContainer greeting="¡Bienvenido a CousinVera! Tu vivero urbano Online" />
-              }
-            />
-            <Route
-              path="/category/:id"
-              element={
-                <ItemListContainer greeting="¡Bienvenido a CousinVera! Tu vivero urbano Online" />
-              }
-            />
-            <Route path="/item/:id" element={<ItemDetailContainer />} />
-            <Route path="/cart" element={<Cart />} />
-          </Routes>
+          <OrderProvider>
+            <Navbar />
+            <Routes>
+              <Route
+                path="/"
+                element={
+                  <ItemListContainer greeting="¡Bienvenido a CousinVera! Tu vivero urbano Online" />
+                }
+              />
+              <Route
+                path="/category/:id"
+                element={
+                  <ItemListContainer greeting="¡Bienvenido a CousinVera! Tu vivero urbano Online" />
+                }
+              />
+              <Route path="/item/:id" element={<ItemDetailContainer />} />
+              <Route path="/cart" element={<Cart />} />
+              <Route path="/checkout" element={<CheckOut />} />
+            </Routes>
+          </OrderProvider>
         </CartProvider>
       </BrowserRouter>
     </div>

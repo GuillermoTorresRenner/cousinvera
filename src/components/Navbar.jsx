@@ -1,12 +1,11 @@
 import { NavLink } from "react-router-dom";
 import CardWidget from "./CardWidget";
-import { useState, useContext } from "react";
+import { useState } from "react";
 import { AiOutlineMenu } from "react-icons/ai";
-import { CartContext } from "../context/CartProvider";
 
 const Navbar = () => {
   const [hidden, setHidden] = useState(false);
-  const { cart } = useContext(CartContext);
+
   return (
     <div>
       <div className="bg-teal-500 pt-5 flex justify-between">
@@ -17,7 +16,7 @@ const Navbar = () => {
           </NavLink>
         </div>
 
-        <CardWidget cart={cart.length} />
+        <CardWidget />
       </div>
       <nav className="flex items-center justify-between flex-wrap bg-teal-500 p-6">
         {/* Menu */}
